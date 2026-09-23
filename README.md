@@ -1,10 +1,10 @@
 # VaultLens
 
-**Inspect password hygiene locally. Keep the export off the network.**
+**Audit a local password-manager export for reuse and common hygiene issues.**
 
-VaultLens is an original Go CLI that reads an explicitly selected Bitwarden-compatible plaintext JSON export and creates a redacted JSON or standalone HTML audit. No account, browser extension, server, dependency downloads at runtime, or network client. This is an audit tool, not a password manager or encryption implementation.
+VaultLens is a Go CLI that reads a selected Bitwarden-compatible plaintext JSON export and creates a redacted JSON or standalone HTML audit. It runs locally without network access and does not modify the source export.
 
-[Open the synthetic HTML demo](https://nazeeh111.github.io/VaultLens/), [inspect the synthetic JSON report](docs/synthetic-report.json) or download and open the [standalone HTML report](docs/synthetic-report.html). Neither contains real credentials.
+[Open the synthetic HTML demo](https://nazeeh111.github.io/VaultLens/), [inspect the synthetic JSON report](docs/synthetic-report.json) or download and open the [standalone HTML report](docs/synthetic-report.html). Both use invented fixture records.
 
 ## Run the synthetic demo
 
@@ -62,6 +62,6 @@ go test -fuzz=FuzzParse -fuzztime=5s
 
 Tests cover bounded malformed/adversarial JSON, duplicate keys and schema aliases, UTF-8 and escaped Unicode, wrong types, HTML injection, exact synthetic findings, secret omission, deterministic output, symlinks, atomic no-overwrite behavior and CLI exits. No real vault data was used during development. Passing tests do not establish comprehensive security or crack resistance. See the [local verification record](docs/verification.md) for exact checks and review-driven fixes.
 
-**Publication note:** Built locally using Git before publication. The upload date records publication of this version, not an invented development history.
+**Development history:** Developed locally with Git before publication.
 
 Original software © 2026 nazeeh111, [MIT](LICENSE). Bitwarden is referenced solely for export-format compatibility; this project is not affiliated with Bitwarden.
