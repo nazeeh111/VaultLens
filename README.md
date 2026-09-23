@@ -4,7 +4,7 @@
 
 VaultLens is an original Go CLI that reads an explicitly selected Bitwarden-compatible plaintext JSON export and creates a redacted JSON or standalone HTML audit. No account, browser extension, server, dependency downloads at runtime, or network client. This is an audit tool, not a password manager or encryption implementation.
 
-[Inspect the synthetic JSON report](docs/synthetic-report.json) or download and open the [standalone HTML report](docs/synthetic-report.html). Neither contains real credentials.
+[Open the synthetic HTML demo](https://nazeeh111.github.io/VaultLens/), [inspect the synthetic JSON report](docs/synthetic-report.json) or download and open the [standalone HTML report](docs/synthetic-report.html). Neither contains real credentials.
 
 ## Run the synthetic demo
 
