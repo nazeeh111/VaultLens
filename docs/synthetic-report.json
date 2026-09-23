@@ -1,0 +1,158 @@
+{
+  "schema": "vaultlens-report-v1",
+  "as_of": "2026-09-23",
+  "labels_included": false,
+  "total_items": 6,
+  "login_items": 5,
+  "skipped_items": 1,
+  "entries": [
+    {
+      "ref": "item-00001",
+      "category": "login"
+    },
+    {
+      "ref": "item-00002",
+      "category": "login"
+    },
+    {
+      "ref": "item-00003",
+      "category": "login"
+    },
+    {
+      "ref": "item-00004",
+      "category": "login"
+    },
+    {
+      "ref": "item-00005",
+      "category": "login"
+    },
+    {
+      "ref": "item-00006",
+      "category": "secure-note"
+    }
+  ],
+  "findings": [
+    {
+      "code": "short-password",
+      "severity": "review",
+      "items": [
+        "item-00001"
+      ],
+      "explanation": "Fewer than 12 Unicode code points. Length alone does not measure guessing resistance."
+    },
+    {
+      "code": "common-password",
+      "severity": "high",
+      "items": [
+        "item-00001"
+      ],
+      "explanation": "Matches the small built-in common-password list; not a comprehensive breached-password check."
+    },
+    {
+      "code": "password-age-review",
+      "severity": "info",
+      "items": [
+        "item-00001"
+      ],
+      "explanation": "Password revision is over 365 days old. Review context; age alone is not a reason to rotate a password."
+    },
+    {
+      "code": "insecure-http-uri",
+      "severity": "review",
+      "items": [
+        "item-00001"
+      ],
+      "explanation": "A saved URI uses unencrypted HTTP. Verify service support before switching to HTTPS."
+    },
+    {
+      "code": "short-password",
+      "severity": "review",
+      "items": [
+        "item-00002"
+      ],
+      "explanation": "Fewer than 12 Unicode code points. Length alone does not measure guessing resistance."
+    },
+    {
+      "code": "common-password",
+      "severity": "high",
+      "items": [
+        "item-00002"
+      ],
+      "explanation": "Matches the small built-in common-password list; not a comprehensive breached-password check."
+    },
+    {
+      "code": "password-age-unknown",
+      "severity": "info",
+      "items": [
+        "item-00002"
+      ],
+      "explanation": "No password revision date in export."
+    },
+    {
+      "code": "short-password",
+      "severity": "review",
+      "items": [
+        "item-00003"
+      ],
+      "explanation": "Fewer than 12 Unicode code points. Length alone does not measure guessing resistance."
+    },
+    {
+      "code": "common-password",
+      "severity": "high",
+      "items": [
+        "item-00003"
+      ],
+      "explanation": "Matches the small built-in common-password list; not a comprehensive breached-password check."
+    },
+    {
+      "code": "password-age-unknown",
+      "severity": "info",
+      "items": [
+        "item-00003"
+      ],
+      "explanation": "No password revision date in export."
+    },
+    {
+      "code": "missing-password",
+      "severity": "review",
+      "items": [
+        "item-00005"
+      ],
+      "explanation": "No password present; this may be a passkey-only or incomplete login."
+    },
+    {
+      "code": "password-reuse",
+      "severity": "high",
+      "items": [
+        "item-00001",
+        "item-00002",
+        "item-00003"
+      ],
+      "explanation": "Exact password shared by these entries; fingerprints are used only in memory and excluded from this report."
+    },
+    {
+      "code": "duplicate-export-id",
+      "severity": "review",
+      "items": [
+        "item-00002",
+        "item-00003"
+      ],
+      "explanation": "Multiple records carry the same export ID; review the source export before cleanup."
+    },
+    {
+      "code": "duplicate-login-candidate",
+      "severity": "review",
+      "items": [
+        "item-00002",
+        "item-00003"
+      ],
+      "explanation": "Username, password and sorted nonempty URI list match exactly. Review before deleting; other fields may differ."
+    }
+  ],
+  "limitations": [
+    "Heuristics are review prompts, not crack-time estimates, breach detection, or a security guarantee.",
+    "Only login passwords and metadata are audited; cards, identities, notes, passkeys, attachments and custom fields are not assessed.",
+    "Password age alone does not establish compromise or require rotation. Missing dates are reported as unknown.",
+    "Reports reveal item counts and relationships even when labels are redacted. Protect both export and reports."
+  ]
+}

@@ -1,0 +1,22 @@
+name: Go verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.1'
+          cache: false
+      - run: go vet ./...
+      - run: go test -race -cover ./...
+      - run: go test -fuzz=FuzzParse -fuzztime=5s
+      - run: go build -trimpath -o vaultlens .
+      - run: ./vaultlens --input testdata/synthetic.json --out demo.html --as-of 2026-09-23
+      - run: ./vaultlens --input testdata/synthetic.json --out demo.json --format json --as-of 2026-09-23

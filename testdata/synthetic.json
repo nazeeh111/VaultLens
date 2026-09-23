@@ -1,0 +1,8 @@
+{"encrypted":false,"items":[
+{"id":"synthetic-a","type":1,"name":"Synthetic mail","login":{"username":"demo@example.invalid","password":"password123","passwordRevisionDate":"2023-01-01T00:00:00Z","uris":[{"uri":"http://mail.example.invalid"}]}},
+{"id":"synthetic-b","type":1,"name":"Synthetic forum","login":{"username":"demo@example.invalid","password":"password123","uris":[{"uri":"https://forum.example.invalid"}]}},
+{"id":"synthetic-b","type":1,"name":"Synthetic duplicate forum","login":{"username":"demo@example.invalid","password":"password123","uris":[{"uri":"https://forum.example.invalid"}]}},
+{"id":"synthetic-c","type":1,"name":"Synthetic long phrase","login":{"username":"alice@example.invalid","password":"demonstration-only-cedar-sky-47","passwordRevisionDate":"2026-09-01T00:00:00Z","uris":[{"uri":"https://example.invalid"}]}},
+{"id":"synthetic-d","type":1,"name":"Synthetic passkey-only","login":{"username":"bob@example.invalid","password":null,"uris":[]}},
+{"id":"synthetic-note","type":2,"name":"Synthetic note","notes":"not-a-real-secret"}
+]}

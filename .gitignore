@@ -1,0 +1,8 @@
+/vaultlens
+/demo.html
+/demo.json
+*.test
+coverage.out
+.DS_Store
+
+/HANDOFF.md
