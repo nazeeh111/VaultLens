@@ -62,6 +62,4 @@ go test -fuzz=FuzzParse -fuzztime=5s
 
 Tests cover bounded malformed/adversarial JSON, duplicate keys and schema aliases, UTF-8 and escaped Unicode, wrong types, HTML injection, exact synthetic findings, secret omission, deterministic output, symlinks, atomic no-overwrite behavior and CLI exits. No real vault data was used during development. Passing tests do not establish comprehensive security or crack resistance. See the [local verification record](docs/verification.md) for exact checks and review-driven fixes.
 
-**Development history:** Developed locally with Git before publication.
-
 Original software © 2026 nazeeh111, [MIT](LICENSE). Bitwarden is referenced solely for export-format compatibility; this project is not affiliated with Bitwarden.
