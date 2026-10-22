@@ -6,6 +6,10 @@ VaultLens is a Go CLI that reads a selected Bitwarden-compatible plaintext JSON 
 
 [Open the synthetic HTML demo](https://nazeeh111.github.io/VaultLens/), [inspect the synthetic JSON report](docs/synthetic-report.json) or download and open the [standalone HTML report](docs/synthetic-report.html). Both use invented fixture records.
 
+![The synthetic VaultLens report labels its six invented records, redacts account identities, and shows prioritized findings with local item references.](docs/synthetic-report-preview.jpg)
+
+The preview is a capture of the public synthetic report. Its item references, counts, and reuse relationships are still information to protect in a real audit; the demo contains no real vault data.
+
 ## Run the synthetic demo
 
 Requires Go 1.24+ and a filesystem supporting hard links (tested on macOS; Linux CI configured). No third-party Go dependencies.
